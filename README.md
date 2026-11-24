@@ -30,4 +30,4 @@ npm run build
 
 [Prototipo en Figma](https://www.figma.com/design/nHHFbMagdWJNCHgUHopW95/HoussiPlay?node-id=3-3)
 
-[Enlace a la página desplegada en GitHub Pages](https://houssi755.github.io/P3.1-HoussiPlay/)
+[Enlace a la página desplegada en GitHub Pages](https://houssam-k01.github.io/P3.1-HoussiPlay/)
