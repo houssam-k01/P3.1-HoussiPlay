@@ -1,0 +1,530 @@
+@use "globals" as *;
+
+
+// CABECERA
+
+.header {
+  background-color: $primarios-fondo;
+  border-bottom: $grosor-borde solid $secundarios-superficie;
+
+  &__interior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: $padding-lg;
+    padding-bottom: $padding-lg;
+  }
+}
+
+// logo y nombre
+.marca {
+  display: flex;
+  align-items: center;
+  gap: $padding-lg;
+  text-decoration: none;
+
+  &__logo {
+    @include flex-center;
+    width: $tam-logo;
+    height: $tam-logo;
+    border-radius: $radio-sm;
+    background-color: $primarios-naranja;
+  }
+
+  &__textos {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__nombre {
+    font-family: $fontfamily-encabezados;
+    font-size: $size-sm;
+    color: $secundarios-blanco;
+  }
+
+  &__lema {
+    font-size: $fontsize-caption;
+    font-weight: $fontweight-medium;
+    color: $primarios-naranja;
+  }
+}
+
+// en movil no cabe el menu, sale a partir de large
+.menu {
+  display: none;
+
+  @include respond-to("large") {
+    display: block;
+  }
+
+  &__lista {
+    display: flex;
+    gap: $size-md;
+    list-style: none;
+    padding: 0;
+  }
+
+  &__enlace {
+    font-size: $fontsize-caption;
+    font-weight: $fontweight-medium;
+    color: $secundarios-gris;
+    text-decoration: none;
+
+    &:hover {
+      color: $primarios-naranja;
+    }
+  }
+}
+
+
+// BOTONES, ETIQUETAS Y TARJETAS
+
+// botones, todos salen del mixin boton
+.boton {
+  @include boton($primarios-naranja, $primarios-fondo);
+  @include flex-center;
+
+  &:hover {
+    background-color: $secundarios-blanco;
+  }
+
+  &--pequeno {
+    padding: $padding-md $padding-lg;
+    border-radius: $radio-sm;
+    font-size: $fontsize-boton;
+  }
+
+  &--grande {
+    padding: $padding-lg $padding-xl;
+    font-size: $fontsize-paragraph;
+  }
+
+  &--oscuro {
+    @include boton($secundarios-superficie, $secundarios-blanco);
+    padding: $padding-lg $padding-xl;
+    font-size: $fontsize-paragraph;
+    font-weight: $fontweight-medium;
+
+    &:hover {
+      background-color: $primarios-fondo;
+    }
+  }
+
+  &--jugar {
+    height: $alto-boton;
+    font-size: $fontsize-boton;
+  }
+
+  &--ancho {
+    height: $alto-campo;
+    font-size: $fontsize-paragraph;
+  }
+
+  &--cuenta {
+    @include boton($primarios-fondo, $secundarios-blanco);
+    flex: 1;
+    height: $alto-boton-cuenta;
+    border: $grosor-borde solid $secundarios-superficie;
+    font-size: $fontsize-boton;
+    font-weight: $fontweight-medium;
+
+    &:hover {
+      background-color: $secundarios-superficie;
+    }
+  }
+}
+
+// pastilla con punto naranja
+.etiqueta {
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: $padding-sm;
+  padding: $padding-sm $padding-md;
+  border-radius: $radio-pildora;
+  background-color: $secundarios-superficie;
+  font-size: $fontsize-caption;
+  font-weight: $fontweight-bold;
+  color: $primarios-naranja;
+
+  &__punto {
+    width: $padding-sm;
+    height: $padding-sm;
+    border-radius: $radio-pildora;
+    background-color: $primarios-naranja;
+  }
+}
+
+// tarjeta de cada juego
+.juego {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: $grosor-borde solid $primarios-naranja;
+  border-radius: $radio-lg;
+  background-color: $secundarios-superficie;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: $padding-md;
+    padding: $padding-lg;
+  }
+
+  &__fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: $padding-sm;
+  }
+
+  &__categoria {
+    font-size: $fontsize-caption;
+    font-weight: $fontweight-bold;
+    color: $primarios-naranja;
+  }
+
+  &__plataformas {
+    font-size: $fontsize-caption;
+    font-weight: $fontweight-medium;
+    color: $secundarios-gris;
+  }
+
+  &__nombre {
+    font-size: $size-sm;
+  }
+
+  // con margin-top auto el boton baja al final
+  &__accion {
+    margin-top: auto;
+  }
+}
+
+
+// PAGINA DE INICIO
+
+// juego destacado: en movil la imagen arriba, en escritorio a la derecha
+.destacado {
+  display: flex;
+  flex-direction: column;
+  gap: $padding-xl;
+  margin-top: $size-lg;
+
+  @include respond-to("large") {
+    flex-direction: row-reverse;
+    align-items: center;
+    margin-top: $size-lg * 1.5;
+  }
+
+  &__imagen {
+    border: $grosor-borde solid $primarios-naranja;
+    border-radius: $radio-lg;
+
+    @include respond-to("large") {
+      width: $ancho-imagen-destacado;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: $padding-xl;
+
+    @include respond-to("large") {
+      flex: 1;
+    }
+  }
+
+  &__titulo {
+    font-family: $fontfamily-encabezados;
+    font-size: $fontsize-h2;
+    line-height: 1.1;
+
+    @include respond-to("large") {
+      font-size: $fontsize-h1;
+      line-height: $lineheight-h1;
+    }
+  }
+
+  &__texto {
+    color: $secundarios-gris;
+  }
+
+  &__botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $padding-lg;
+  }
+}
+
+// catalogo: 1 columna en movil y 3 en escritorio
+.catalogo {
+  margin-top: $size-lg * 2;
+  margin-bottom: $size-lg * 2;
+
+  @include respond-to("large") {
+    margin-top: $size-lg * 3;
+  }
+
+  &__titulo {
+    font-family: $fontfamily-encabezados;
+    font-size: $fontsize-logo;
+    line-height: $lineheight-h2;
+    margin-bottom: $padding-xl;
+  }
+
+  &__lista {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $grid-columns-gap;
+
+    @include respond-to("large") {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+
+// PAGINA DEL LOGIN
+
+// la pagina del login tiene el fondo naranja
+.pagina-login {
+  background-color: $primarios-naranja;
+}
+
+// en movil el panel arriba y la presentacion debajo, en escritorio al reves
+.login {
+  display: flex;
+  flex-direction: column;
+  gap: $padding-xl;
+  padding-top: $size-lg;
+  padding-bottom: $size-lg;
+
+  @include respond-to("large") {
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: $size-lg + $padding-lg;
+  }
+}
+
+// panel del formulario
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: $padding-lg;
+  padding: $padding-xl;
+  border-radius: $radio-xl;
+  background-color: $secundarios-superficie;
+
+  @include respond-to("large") {
+    width: $ancho-panel;
+    padding: $padding-xl * 1.5;
+  }
+
+  &__logo {
+    @include flex-center;
+    width: $tam-logo-grande;
+    height: $tam-logo-grande;
+    border-radius: $radio-sm;
+    background-color: $primarios-naranja;
+  }
+
+  &__titulo {
+    font-family: $fontfamily-encabezados;
+    font-size: $fontsize-h2;
+    line-height: $lineheight-h2;
+  }
+
+  &__texto {
+    color: $secundarios-gris;
+  }
+
+  &__redes {
+    display: flex;
+    gap: $padding-md;
+  }
+
+  &__separador {
+    text-align: center;
+    font-size: $fontsize-caption;
+    color: $secundarios-gris;
+  }
+
+  &__registro {
+    text-align: center;
+    font-size: $fontsize-caption;
+    color: $secundarios-gris;
+  }
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: $padding-lg;
+
+  &__fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: $fontsize-caption;
+    font-weight: $fontweight-medium;
+  }
+
+  &__recordar {
+    display: flex;
+    align-items: center;
+    gap: $padding-sm;
+  }
+
+  &__enlace {
+    font-size: $fontsize-caption;
+    font-weight: $fontweight-bold;
+    color: $primarios-naranja;
+    text-decoration: none;
+  }
+}
+
+// cada campo con su etiqueta y su caja
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: $padding-sm;
+
+  &__etiqueta {
+    font-size: $fontsize-caption;
+    font-weight: $fontweight-medium;
+  }
+
+  &__caja {
+    height: $alto-campo;
+    padding: 0 $padding-lg;
+    border: $grosor-borde solid $secundarios-superficie;
+    border-radius: $radio-md;
+    background-color: $primarios-fondo;
+    font-family: $fontfamily-paragraph;
+    font-size: $fontsize-paragraph;
+    color: $secundarios-blanco;
+  }
+}
+
+// tarjeta de presentacion con la imagen y los datos
+.presentacion {
+  display: flex;
+  flex-direction: column;
+  gap: $padding-lg;
+  padding: $padding-lg;
+  border-radius: $radio-xl;
+  background-color: $secundarios-superficie;
+
+  @include respond-to("large") {
+    width: $ancho-presentacion;
+    padding: $size-lg;
+  }
+
+  &__imagen {
+    border-radius: $radio-md;
+  }
+}
+
+.datos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $padding-sm;
+  list-style: none;
+  padding: 0;
+
+  @include respond-to("large") {
+    gap: $padding-lg;
+  }
+}
+
+.dato {
+  display: flex;
+  flex-direction: column;
+  padding: $padding-md;
+  border: $grosor-borde solid $secundarios-superficie;
+  border-radius: $radio-md;
+  background-color: $primarios-fondo;
+
+  &__nombre {
+    font-size: $fontsize-caption;
+    font-weight: $fontweight-medium;
+    color: $secundarios-gris;
+  }
+
+  &__valor {
+    font-size: $size-sm;
+  }
+
+  &__texto {
+    font-size: $fontsize-caption;
+    color: $secundarios-gris;
+  }
+}
+
+
+// PIE
+
+// pie naranja con las redes
+.footer {
+  padding: $size-lg 0;
+  background-color: $primarios-naranja;
+  color: $primarios-fondo;
+
+  &__interior {
+    display: flex;
+    flex-direction: column;
+    gap: $padding-xl;
+
+    @include respond-to("large") {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__texto {
+    font-size: $fontsize-redes;
+    font-weight: $fontweight-bold;
+    line-height: 1.1;
+
+    @include respond-to("large") {
+      max-width: $ancho-texto-footer;
+      font-size: $size-lg;
+    }
+  }
+
+  &__resalte {
+    color: $secundarios-blanco;
+  }
+}
+
+.redes {
+  display: flex;
+  flex-direction: column;
+  gap: $padding-md;
+  list-style: none;
+  padding: 0;
+
+  @include respond-to("large") {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    max-width: $ancho-texto-footer;
+  }
+
+  &__enlace {
+    display: flex;
+    align-items: center;
+    gap: $padding-sm;
+    font-weight: $fontweight-bold;
+    color: $primarios-fondo;
+    text-decoration: none;
+  }
+
+  &__icono {
+    width: $size-lg;
+  }
+}

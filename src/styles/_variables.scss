@@ -1,0 +1,70 @@
+// Variables exportadas de Figma (HoussiPlay)
+
+// Color
+$primarios-fondo: #05070a;
+$primarios-naranja: #ffa600;
+$secundarios-superficie: #0f141b;
+$secundarios-blanco: #f5f7fa;
+$secundarios-gris: #a7b0c0;
+
+// Layout
+$grid-number-columns: 12;
+$grid-columns-width: 75px;
+$grid-columns-gap: 20px;
+$padding-sm: 8px;
+$padding-md: 12px;
+$padding-lg: 16px;
+$padding-xl: 24px;
+
+// Size
+$size-sm: 20px;
+$size-md: 24px;
+$size-lg: 32px;
+
+// Typography
+$fontsize-h1: 64px;
+$fontsize-h2: 40px;
+$fontsize-logo: 28px;
+$fontsize-menuitem: 20px;
+$fontsize-paragraph: 16px;
+$fontsize-caption: 12px;
+$lineheight-h1: 72px;
+$lineheight-h2: 48px;
+$lineheight-paragraph: 24px;
+$fontweight-regular: 400;
+$fontweight-medium: 600;
+$fontweight-bold: 700;
+$fontfamily-encabezados: "Space Grotesk", sans-serif;
+$fontfamily-paragraph: "Inter", sans-serif;
+
+
+// Variables puestas a mano
+
+// radios de las esquinas
+$radio-sm: 12px;
+$radio-md: 16px;
+$radio-lg: 20px;
+$radio-xl: 32px;
+$radio-pildora: 999px;
+
+// tamaños que no estaban en Figma
+$fontsize-boton: 12px;
+$fontsize-redes: 24px;
+$grosor-borde: 1px;
+
+// medidas de piezas
+$ancho-contenedor: 1290px;
+$tam-logo: 44px;
+$tam-logo-grande: 56px;
+$alto-boton: 44px;
+$alto-boton-cuenta: 48px;
+$alto-campo: 56px;
+$ancho-panel: 464px;
+$ancho-presentacion: 560px;
+$ancho-imagen-destacado: 55%;
+$ancho-texto-footer: 420px;
+
+// breakpoints (mobile first)
+$breakpoints: (
+  "large": 1200px,
+);

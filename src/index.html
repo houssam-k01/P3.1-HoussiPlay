@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet" />
+    <title>HoussiPlay · Cloud Gaming</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header__interior">
+        <a class="marca" href="index.html">
+          <span class="marca__logo"><img src="./assets/iconos/mando.svg" alt="" /></span>
+          <span class="marca__textos">
+            <span class="marca__nombre">HoussiPlay</span>
+            <span class="marca__lema">CLOUD GAMING</span>
+          </span>
+        </a>
+
+        <nav class="menu">
+          <ul class="menu__lista">
+            <li><a class="menu__enlace" href="#catalogo">Juegos</a></li>
+            <li><a class="menu__enlace" href="#catalogo">Catalogo</a></li>
+            <li><a class="menu__enlace" href="#">Descargar</a></li>
+            <li><a class="menu__enlace" href="#">Planes</a></li>
+          </ul>
+        </nav>
+
+        <a class="boton boton--pequeno" href="login.html">Iniciar sesión</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="container destacado">
+        <img class="destacado__imagen" src="./assets/img/hero-tlou.jpg" alt="The Last of Us Part I" />
+
+        <div class="destacado__info">
+          <p class="etiqueta">
+            <span class="etiqueta__punto"></span>
+            Novedad En La Plataforma
+          </p>
+          <h1 class="destacado__titulo">THE LAST OF US PART I</h1>
+          <p class="destacado__texto">
+            The Last of Us Part I es un videojuego de acción y aventura de 2022 desarrollado por Naughty Dog y
+            publicado por Sony Interactive Entertainment. Un remake del juego de 2013 The Last of Us, presenta una
+            jugabilidad revisada, que incluye combate y exploración mejorados, y opciones de accesibilidad ampliadas.
+          </p>
+          <div class="destacado__botones">
+            <a class="boton boton--grande" href="#">Jugar ahora</a>
+            <a class="boton boton--oscuro" href="#">Ver tráiler</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="container catalogo" id="catalogo">
+        <h2 class="catalogo__titulo">Juegos destacados</h2>
+
+        <div class="catalogo__lista">
+          <article class="juego">
+            <img class="juego__portada" src="./assets/img/fortnite.jpg" alt="Fortnite" />
+            <div class="juego__info">
+              <div class="juego__fila">
+                <span class="juego__categoria">Acción, Multijugador</span>
+                <span class="juego__plataformas">PS5 / PS4 / PC / Cloud</span>
+              </div>
+              <h3 class="juego__nombre">Fortnite</h3>
+              <a class="boton boton--jugar juego__accion" href="#">Jugar</a>
+            </div>
+          </article>
+
+          <article class="juego">
+            <img class="juego__portada" src="./assets/img/roblox.jpg" alt="Roblox" />
+            <div class="juego__info">
+              <div class="juego__fila">
+                <span class="juego__categoria">Multijugador</span>
+                <span class="juego__plataformas">PC / Cloud</span>
+              </div>
+              <h3 class="juego__nombre">Roblox</h3>
+              <a class="boton boton--jugar juego__accion" href="#">Jugar</a>
+            </div>
+          </article>
+
+          <article class="juego">
+            <img class="juego__portada" src="./assets/img/fc27.jpg" alt="FC 27" />
+            <div class="juego__info">
+              <div class="juego__fila">
+                <span class="juego__categoria">Deportes, Multijugador</span>
+                <span class="juego__plataformas">PS5 / PS4 / PC / Cloud</span>
+              </div>
+              <h3 class="juego__nombre">FC 27</h3>
+              <a class="boton boton--jugar juego__accion" href="#">Jugar</a>
+            </div>
+          </article>
+
+          <article class="juego">
+            <img class="juego__portada" src="./assets/img/mx-bikes.jpg" alt="MX Bikes" />
+            <div class="juego__info">
+              <div class="juego__fila">
+                <span class="juego__categoria">Deportes</span>
+                <span class="juego__plataformas">PC / Cloud</span>
+              </div>
+              <h3 class="juego__nombre">MX Bikes</h3>
+              <a class="boton boton--jugar juego__accion" href="#">Jugar</a>
+            </div>
+          </article>
+
+          <article class="juego">
+            <img class="juego__portada" src="./assets/img/nba-2k27.jpg" alt="NBA 2k27" />
+            <div class="juego__info">
+              <div class="juego__fila">
+                <span class="juego__categoria">Deportes, Multijugador</span>
+                <span class="juego__plataformas">PS5 / PS4 / PC / Cloud</span>
+              </div>
+              <h3 class="juego__nombre">NBA 2k27</h3>
+              <a class="boton boton--jugar juego__accion" href="#">Jugar</a>
+            </div>
+          </article>
+
+          <article class="juego">
+            <img class="juego__portada" src="./assets/img/rocket-league.jpg" alt="Rocket League" />
+            <div class="juego__info">
+              <div class="juego__fila">
+                <span class="juego__categoria">Deportes, Multijugador</span>
+                <span class="juego__plataformas">PS5 / PS4 / PC / Cloud</span>
+              </div>
+              <h3 class="juego__nombre">Rocket League</h3>
+              <a class="boton boton--jugar juego__accion" href="#">Jugar</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__interior">
+        <p class="footer__texto">SIGUENOS EN <span class="footer__resalte">NUESTRAS</span> REDES SOCIALES !</p>
+
+        <ul class="redes">
+          <li>
+            <a class="redes__enlace" href="#">
+              <img class="redes__icono" src="./assets/iconos/youtube.svg" alt="" />
+              @HoussiPlayStudios
+            </a>
+          </li>
+          <li>
+            <a class="redes__enlace" href="#">
+              <img class="redes__icono" src="./assets/iconos/instagram.svg" alt="" />
+              @houssiplay.official
+            </a>
+          </li>
+          <li>
+            <a class="redes__enlace" href="#">
+              <img class="redes__icono" src="./assets/iconos/tiktok.svg" alt="" />
+              @houssiplay
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

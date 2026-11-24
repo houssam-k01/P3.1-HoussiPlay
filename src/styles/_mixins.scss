@@ -1,0 +1,29 @@
+@use "sass:map";
+@use "variables" as *;
+
+// media queries con el mapa $breakpoints
+// uso: @include respond-to("large") { ... }
+@mixin respond-to($breakpoint) {
+  @media (min-width: map.get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+// boton con el color de fondo y de texto que le pase
+@mixin boton($bg-color, $text-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  border-radius: $radio-md;
+  font-family: $fontfamily-paragraph;
+  font-weight: $fontweight-bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+// centrar con flex
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

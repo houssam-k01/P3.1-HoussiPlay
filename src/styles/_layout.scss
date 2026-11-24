@@ -1,0 +1,45 @@
+@use "globals" as *;
+
+// base del documento
+html {
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: $fontfamily-paragraph;
+  font-size: $fontsize-paragraph;
+  line-height: $lineheight-paragraph;
+  background-color: $primarios-fondo;
+  color: $secundarios-blanco;
+  margin: 0;
+  padding: 0;
+}
+
+// quito los margenes que ponen por defecto
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+// contenedor centrado con margen a los lados
+.container {
+  width: 100%;
+  max-width: $ancho-contenedor + $size-sm * 2;
+  margin: 0 auto;
+  padding: 0 $size-sm;
+}
