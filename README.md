@@ -1,6 +1,6 @@
 # P3.1 Maquetación con Vite y SASS
 
-> S2DAW Diseño de Interfaces
+> Asignatura: Diseño de Interfaces Web (DIW) · S2DAW
 > Autor: Houssam Koualla
 
 ## 1. Descripción
@@ -27,6 +27,8 @@ npm run build
 `npm run build` genera la carpeta `docs` para GitHub Pages.
 
 ## 3. Enlaces de interés
+
+[Repositorio en GitHub](https://github.com/houssam-k01/P3.1-HoussiPlay)
 
 [Prototipo en Figma](https://www.figma.com/design/nHHFbMagdWJNCHgUHopW95/HoussiPlay?node-id=3-3)
 
